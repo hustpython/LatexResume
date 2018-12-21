@@ -6,6 +6,6 @@
 
 ## 预览
 
-![](pdf/tp1.jpeg)
+![](./pdf/tp1.jpeg)
 
-![](pdf/tp2.jpeg)
+![](./pdf/tp2.jpeg)
