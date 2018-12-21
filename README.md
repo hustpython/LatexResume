@@ -4,7 +4,7 @@
 
 修改```myresume.sty```和```myresumewithlatex.tex```中相关信息。
 
-## 预览
+## 效果预览
 
 ![](pdf/tp1.jpeg)
 
