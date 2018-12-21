@@ -1,0 +1,98 @@
+% !TEX program = xelatex
+\documentclass[a4paper,8pt,UTF8]{ctexart}
+
+\usepackage{myresume}
+
+\begin{document}
+% 页面样式为空白样式
+\pagestyle{empty}
+% 基本信息栏
+\mybaseinfo
+% 空0.5cm
+\vskip 0.2cm
+% 专业技能
+\professionalskill{专业技能}{
+\myitem{熟练使用PYTHON语言，并使用PYTHON做过算法的开发和界面开发}
+\myitem{研究生期间认真学习了遗传算法、EDA算法，贝叶斯优化等智能优化算法}
+\myitem{认真学习了C++和C，并用C++的QT开发界面程序}
+\myitem{认真踏实学习了数据结构,算法等计算机课程}
+\myitem{学习过OpenCV，能够实现基本的图像处理算法}
+\myitem{熟练使用Linux系统.学习过Tensorflow,Keras库}
+\myitem{会使用Go做网络应用开发，使用Go分布式任务调度系统}
+\myitem{会使用Latex进行文档排版}
+}
+\vskip 0.2cm
+% 荣誉奖项
+\professionalskill{荣誉奖项}{
+\myitem{2018华为软件精英挑战赛武长赛区第46名}
+\myitem{海康威视2018软件精英挑战赛全国排名20+}
+\myitem{在实验楼网站创建了三个实验课程}
+}
+% 教育经历
+\vskip 0.2cm
+\myexperience{教育经历}{
+    \mytimeitem{华中科技大学 \ - \ 软件工程 \ 光学与电子信息学院}{\timeseries{2016.09}{2019.03}}{\myitem{专业排名:前50$\%$}}
+    \mytimeitem{南通大学 \ - \ 应用物理学 \ 理学院}{\timeseries{2012.09}{2016.06}}{\myitem{专业排名:前30$\%$}}
+}
+\vskip 0.2cm
+% 实习经历
+\myexperience{实习经历}{
+    \mytimeitem{武汉哈哈便利科技有限公司 \ - \ 深度学习算法工程师 \ AI部门}{\timeseries{2018.01}{2018.03}}{
+        \myitem{项目名称：无人售货柜SKU定位，分类与回归}
+        \myitem{项目描述：基于keras对对无人售货柜SKU个数的回归任务，SKU总数为25到80;无人售货柜SKU进行分类，数据量单个类2000到10000，SKU总数13个到25;维护SKU定位任务。}
+        \myitem{最终效果：分类任务99.99$\%$成功率（除去人工标注错误，几万张图片错误率1到2张图片）;回归商品个人以及变化个数任务接近99.1$\%$;商品变与不变成功率99.7$\%$(已经上线)}
+        \myitem{个人任务：对训练的模型在服务器上继续部署，并进行请求时间的测试。编写了基于Qt的数据标注和检测软件。实验室数据处理程序开发实验室数据处理程序开发}
+        }
+}
+\vskip 0.2cm
+% 项目经历
+\myexperience{项目经历}{
+    \vskip -0.5cm
+    \mytimeandintroitem{实验室数据处理程序开发}{\timeseries{2018.01}{2018.03}}
+    {为方便实验室对仿真数据进行分析，专门开发了三款可视化数据处理程序。}
+    {\myitem{实验室微波暗室数据处理平台：使用了Python，wxpython，matplotlib等编程工具。}
+    \myitem{仿真无源数据展示和拟合平台：对数据库中的数据进行展示并且用最小二乘法对复杂和实验数据进行拟合。}
+    \myitem{仿真有源数据展示平台：使用了 Python，PyQt，对多变量仿真曲线进行包络处理}}
+    
+    \mytimeandintroitem{车牌识别客户端实现车牌识别客户端实现}{\timeseries{2018.08}{2018.09}}
+    {利用OpenCV实现了对车牌识别的相关算法，QT建立可视化客户端。}
+    {\myitem{使用语言和库:C++、qml、OpenCV3.0}
+    \myitem{功能:可视化车牌，输出识别的车牌号}
+    }
+
+    \mytimeandintroitem{交互式数据处理平台}{\timeseries{2017.09}{2017.11}}
+    {开发了基于web端的可视化数据展示平台。它有如下特色:}
+    {\myitem{可实时对数据库中的数据进行监控，绘制。}
+    \myitem{recat框架，基于d3.js的图表展示功能可以很方便地与数据进行交互。}
+    }
+
+    \mytimeandintroitem{暑期MIDIS功能升级开发}{\timeseries{2017.07}{2017.09}}
+    {暑期一起和在实验室进行实习的本科生一起进行实验室的一些工作。主要是作为软件开发方面的负责人。主要的一些成果如下：}
+    {\myitem{设计针对ISAR成像的算法插件，包括自动调用CST仿真软件进行参数扫描仿真，然后提取电场和相位参数。最后利用成像算法将数据转化为需要的图像。}
+    \myitem{实现了MIDIS的多用户管理，任务调动功能。方便用户对计算资源管理，对计算任务进行分配。}
+    }
+
+    \mytimeandintroitem{MIDIS数据库升级}{\timeseries{2017.04}{2017.06}}
+    {面向频率选择表面设计的数据库开发和应用研究}
+    {\myitem{将MIDIS平台中使用的轻量级数据库sqlite换成非关系型数据库Mongodb}
+    \myitem{对插件中的所有关于数据库的接口，重新封装。包括，储存仿真数据的接口和数据挖掘的接口。}
+    }
+
+    \mytimeandintroitem{微波智能集成平台算法插件开发}{\timeseries{2016.09}{2017.03}}
+    {微波智能集成平台(MIDIS)的设计理念集“理论建模、计算仿真、优化设计、实验测量、机理验证”5个环节于一体。能够按照人们的具体的需求，目标导向智能的设计出满足满足人们需求的特定参数、性能的材料结构，主要包括下面一些功能：}
+    {\myitem{平台的可扩展：提供平台标准的插件接口，方便日后的扩展和优化算法插件的加入。}
+    \myitem{计算资源管理：由于优化过程需要大量计算资源，采用分布式计算，将任务分配到可联机计算资源并自动计算数据。}
+    \myitem{数据库：计算后产生大量的仿真数据，需要对数据镜像保存，以便日后的分析。}
+    }
+
+}
+\vskip 0.2cm
+% 兴趣爱好
+\professionalskill{其他}{
+\myitem{证书/执照：C1驾照}
+\myitem{语言：CET6}
+\myitem{兴趣爱好：热爱羽毛球}
+}
+
+
+\end{document}

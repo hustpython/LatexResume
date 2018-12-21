@@ -1,0 +1,135 @@
+% 导入包
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ProvidesPackage{myresume}  
+% 设置简历页面大小
+\usepackage[top=1cm,bottom=0.5cm, %
+            left=1.5cm,right=1.5cm]{geometry}                                                 % 数学公式
+\usepackage{graphicx}
+\usepackage{tabularx}   
+\usepackage{xifthen}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{xcolor}  
+\usepackage{color}
+\usepackage{fontawesome}
+\usepackage{fontspec, xunicode, xltxtra}            %
+\usepackage{xeCJK}   
+\usepackage{amsfonts}   
+\usepackage{paralist}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\defaultfontfeatures{Mapping=tex-text}    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 设置item的间隔等样式
+\usepackage{enumitem} \setenumerate[1]{itemindent=-2em,itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt} \setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt} \setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareGraphicsExtensions{.eps,.ps,.png,.jpg} %对于同名图片的优先顺序调用
+\graphicspath{{graphics/}} %设置图片路径为当前路径下的graphics文件夹
+\RequirePackage{hyperref}
+\hypersetup{hidelinks}
+\RequirePackage{url}
+\urlstyle{tt}
+\setmainfont{Times New Roman}
+
+\setCJKfamilyfont{hwktbd}[AutoFakeBold = {1}]{STKaiti}
+\newcommand{\hwktbd}{\CJKfamily{hwktbd}} 
+
+\setCJKfamilyfont{hwkt}[AutoFakeBold = {0}]{STKaiti}
+\newcommand{\hwkt}{\CJKfamily{hwkt}} 
+
+\setCJKmainfont{STKaiti}
+% 左侧图片
+\def\myavatar{avatar}
+\def\myphoto{
+    \includegraphics[width=2.1cm,height=2.94cm]{\myavatar}
+    }
+
+% 个人基本信息 关键词定义
+\newcommand{\myname}[1]{\hwktbd\bfseries\fontsize{15pt}{15pt}{#1}}
+
+
+\newcommand{\myjobintention}[1]{\hwktbd\bfseries\small 求职意向~~:~~{#1}}
+
+\newcommand{\mytel}[1]{\small \faPhone~~ {#1}}
+
+\newcommand{\myemail}[1]{\small \faEnvelope~~ \href{mailto:#1}{#1}}
+
+\newcommand{\mywechat}[1]{\hwkt\small 微信~~:~~{#1}}
+\newcommand{\myaddress}[1]{\hwkt\small 地址~~:~~{#1}}
+
+\newcommand{\mygithub}[2][]{\small \faGithubAlt ~~ 
+  \ifthenelse{\isempty{#1}}%
+    {\href{#2}{#2}}
+    {\href{#2}{#1}}}
+
+% 信息表格的行距
+\renewcommand\arraystretch{1.35}
+\def\myinfotable {
+    \begin{tabular}{rl}
+        {\makebox[8em][l]{\myname{余忠伟}}} &\hspace{2.5cm}\myjobintention{软件开发工程师}\\
+        
+        {\makebox[8em][s]{\mytel{130-7274-0643}}} &\hspace{2.5cm}\myemail{yzwmxq@gmail.com} \\ 
+    
+        {\makebox[8em][s]{\mywechat{WSYZWN1}}} &\hspace{2.5cm}\mygithub[github.com/hustpython]{https://github.com/hustpython} \\ 
+       
+        {\makebox[8em][s]{\myaddress{华中科技大学启明学院}}} &\hspace{2.5cm}
+        
+    \end{tabular} 
+}
+% 基本信息组合
+\newcommand{\mybaseinfo}{
+
+\begin{multicols}{6}
+   
+    \noindent \myphoto
+
+\myinfotable
+\end{multicols}
+}
+
+% 专业技能
+\def\textpurple{\textcolor[rgb]{0.63 ,0.26, 0.94}}
+% 标题+item
+\newcommand{\professionalskill}[2]{
+    {\noindent\hwktbd\bfseries\fontsize{11pt}{11pt}{\textbf{#1}}}
+    \vskip 0cm
+    {\noindent\textpurple{\rule[0.25\baselineskip]{\textwidth}{1pt}}}\vskip -1cm
+    {#2} 
+}
+% item
+\newcommand{\myitem}[1]
+{
+    \begin{itemize}[itemindent=-0.2em]
+    \item[\bfseries\large$\bullet$]~\hwkt\small\color{gray}{#1}
+    \end{itemize}
+}
+% 时间
+\newcommand{\timeseries}[2]
+{
+        \hwkt
+        {#1}~-~{#2}       
+}
+% 带时间的item
+\newcommand{\mytimeitem}[3]{
+\noindent{#1}\hfill{#2}% 时间
+\vskip 0.2cm {#3}% item
+}
+% 带时间和介绍的item
+\newcommand{\mytimeandintroitem}[4]{
+\vskip 0.2cm
+\noindent{#1}\hfill{#2}% 时间
+{\vskip 0.3cm \noindent\hwkt\small\color{gray}{#3}}% 介绍文字
+\vskip 0.2cm \noindent{#4} % item
+}
+% 带时间的经历
+\newcommand{\myexperience}[2]{
+    {\noindent\hwktbd\bfseries\fontsize{11pt}{11pt}{\textbf{#1}}} %标题
+    \vskip 0cm
+    {\noindent\textpurple{\rule[0.25\baselineskip]{\textwidth}{1pt}}} %item
+    {#2} 
+}
+
+\endinput
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
